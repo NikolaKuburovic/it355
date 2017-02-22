@@ -22,7 +22,7 @@ public class PrvaStranaController {
     public String printHello(ModelMap model) {
         model.addAttribute("poruka", "Добро дошли на страну МетКурсеви!");
         model.addAttribute("predmet", "IT355 Веб Системи 2");
-        model.addAttribute("student", "Никола Кубуровић 1095");
+        model.addAttribute("fakultet", "Универзитет Метрополитан");
         return "pozdrav";
     }
 
