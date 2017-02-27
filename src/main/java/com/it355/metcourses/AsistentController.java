@@ -23,7 +23,7 @@ public class AsistentController {
 
     @RequestMapping(value = "/asistent", method = RequestMethod.GET)
     public ModelAndView asistent() {
-        System.out.println("Pozivam message source");
+        System.out.println("Pozivam message source za asistente");
         System.out.println(messageSource.getMessage("name", null, Locale.ENGLISH));
         return new ModelAndView("asistent", "command", new Asistent());
     }

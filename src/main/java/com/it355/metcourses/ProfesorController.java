@@ -23,7 +23,7 @@ public class ProfesorController {
 
     @RequestMapping(value = "/profesor", method = RequestMethod.GET)
     public ModelAndView profesor() {
-        System.out.println("Pozivam message source");
+        System.out.println("Pozivam message source za profesore");
         System.out.println(messageSource.getMessage("name", null, Locale.ENGLISH));
         return new ModelAndView("profesor", "command", new Profesor());
     }
