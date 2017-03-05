@@ -1,13 +1,9 @@
-<%-- 
-    Document   : tabela
-    Created on : Feb 8, 2017, 3:23:57 PM
-    Author     : Nikola Kuburovic
---%>
 
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ include file="header.jsp" %>
+
 <h2>Унесите информације о професору</h2>
 <form:form method="POST" action="/MetCourses/addProfesor">
     <table>
