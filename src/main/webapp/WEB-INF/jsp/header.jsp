@@ -46,9 +46,8 @@
                         <li><a href="admin">Админ</a></li>
                         <li><a href="profesor">Додати професора</a></li>
                         <li><a href="asistent">Додати асистента</a></li>
-                        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span>Пријавите се</a></li>
-                        <!--                        <li><a href="#" onclick="formSubmit();
-                                                            return false;">Одјавите се</a></li>       -->
+                        <li><a href="premiumFlow"><span style="font-weight: bold">Премијум</span></a></li>
+                        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span>Пријавите се</a></li>         
                         <li>
                         <sec:authorize access="hasRole('ROLE_USER')">
                             <c:url value="/j_spring_security_logout" var="logoutUrl" />
