@@ -18,7 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MainController {
-
+  
     @RequestMapping(value = {"/"}, method = RequestMethod.GET)
     public String printHello(ModelMap model) {
         model.addAttribute("poruka1", "Добро дошли на МетКурсеве!");
@@ -70,5 +70,5 @@ public class MainController {
         model.setViewName("403");
         return model;
     }
-
+ 
 }

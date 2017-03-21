@@ -11,24 +11,30 @@
 </c:if>
 <c:if test="${not empty msg}">
     <div class="msg">${msg}</div>
-</c:if>
-<form name='loginForm'
+</c:if><br/>
+<form class="form-horizontal" name='loginForm'
       action="<c:url value='/j_spring_security_check' />" method='POST'>
-    <table>
-        <tr>
-            <td>Корисник:</td>
-            <td><input type='text' name='korisnik_username' autofocus/></td>
-        </tr>
-        <tr>
-            <td>Лозинка:</td>
-            <td><input type='password' name='korisnik_password'/></td>
-        </tr>
-        <tr>
-            <td colspan='2'>
-                <input name="submit" type="submit" value="submit" />
-            </td>
-        </tr>
-    </table>
+    <div class="form-group">
+        <label class="col-sm-1 control-label">Корисник:</label>
+        <div class="col-sm-4">
+            <input class="form-control" type='text' name='korisnik_username' autofocus/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-1 control-label">Лозинка:</label>
+        <div class="col-sm-4">
+            <input class="form-control" type='password' name='korisnik_password'/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-1 col-sm-4">
+
+            <button type="submit" class="btn btn-primary pull-right">Пријави се</button>
+
+        </div>
+    </div><br/>
+
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 </form>
 

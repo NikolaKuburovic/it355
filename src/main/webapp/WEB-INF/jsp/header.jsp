@@ -1,8 +1,3 @@
-<%-- 
-    Document   : header
-    Created on : Feb 8, 2017, 2:38:32 PM
-    Author     : Nikola Kuburovic
---%>
 
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -21,54 +16,70 @@
         <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
         crossorigin="anonymous"></script>
-    <spring:url value="/resources/stil.css" var="stilCss"></spring:url>
-    <link href="${stilCss}" rel="stylesheet" />
+        <spring:url value="/resources/stil.css" var="stilCss"></spring:url>
+        <link href="${stilCss}" rel="stylesheet" />
 
-    <title>MetCourses</title>
+        <title>MetCourses</title>
 
-</head>
-<body>
-    <div class="container">
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false"
-                            aria-controls="navbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/MetCourses">MetCourses</a>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false"
+                                aria-controls="navbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/MetCourses">MetCourses</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li><a href="/MetCourses">Почетна</a></li>
+                            <li><a href="/MetCourses/admin">Админ</a></li>
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                                    Професори <b class="caret"></b></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="/MetCourses/profesor">Табела професора</a></li>
+                                    <li><a href="/MetCourses/addprofesor">Унос професора</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                                    Асистенти <b class="caret"></b></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="/MetCourses/asistent">Табела асистената</a></li>
+                                    <li><a href="/MetCourses/addasistent">Унос асистената</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/MetCourses/premiumFlow"><span style="font-weight: bold">Премијум</span></a></li>
+                            <li><a href="/MetCourses/login"><span class="glyphicon glyphicon-log-in"></span>Пријавите се</a></li>
+
+                            <li>
+                                <sec:authorize access="hasRole('ROLE_USER')">
+                                    <c:url value="/j_spring_security_logout" var="logoutUrl" />
+                                    <form action="${logoutUrl}" method="post" id="logoutForm">
+                                        <input type="hidden"
+                                               name="${_csrf.parameterName}"
+                                               value="${_csrf.token}" />
+                                    </form>
+                                    <script>
+                                        function formSubmit() {
+                                            document.getElementById("logoutForm").submit();
+                                        }
+                                    </script>
+                                    <c:if test="${pageContext.request.userPrincipal.name != null}">
+                                        <a href="#" onclick="formSubmit();
+                                                return false;">Одјавите се</a>
+                                    </c:if>
+                                </sec:authorize>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li><a href="/MetCourses">Почетна</a></li>
-                        <li><a href="admin">Админ</a></li>
-                        <li><a href="profesor">Додати професора</a></li>
-                        <li><a href="asistent">Додати асистента</a></li>
-                        <li><a href="premiumFlow"><span style="font-weight: bold">Премијум</span></a></li>
-                        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span>Пријавите се</a></li>         
-                        <li>
-                        <sec:authorize access="hasRole('ROLE_USER')">
-                            <c:url value="/j_spring_security_logout" var="logoutUrl" />
-                            <form action="${logoutUrl}" method="post" id="logoutForm">
-                                <input type="hidden"
-                                       name="${_csrf.parameterName}"
-                                       value="${_csrf.token}" />
-                            </form>
-                            <script>
-                                function formSubmit() {
-                                    document.getElementById("logoutForm").submit();
-                                }
-                            </script>
-                            <c:if test="${pageContext.request.userPrincipal.name != null}">
-                                <a href="#" onclick="formSubmit();return false;">Одјавите се</a>
-                            </c:if>
-                        </sec:authorize>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+            </nav>
 
-        <div class="omot">
+            <div class="omot">
