@@ -6,6 +6,13 @@
             http://www.springframework.org/schema/security 
             http://www.springframework.org/schema/security/spring-security-3.2.xsd">
     
+    <http pattern="/addprofesori" security="none" />
+    <http pattern="/editprofesori/*" security="none" />
+    <http pattern="/deleteprofesori/*" security="none" />
+    <http pattern="/addasistenti" security="none" />
+    <http pattern="/editasistenti/*" security="none" />
+    <http pattern="/deleteasistenti/*" security="none" />
+    
     <http auto-config="true" use-expressions="true">
         <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
         <intercept-url pattern="/addasistent" access="hasRole('ROLE_ADMIN')" />
