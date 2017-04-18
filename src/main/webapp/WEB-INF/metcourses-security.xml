@@ -12,6 +12,12 @@
     <http pattern="/addasistenti" security="none" />
     <http pattern="/editasistenti/*" security="none" />
     <http pattern="/deleteasistenti/*" security="none" />
+    <http pattern="/addkorisnik" security="none" />
+    <http pattern="/editkorisnik/*" security="none" />
+    <http pattern="/deletekorisnik/*" security="none" />
+    <http pattern="/addkurs" security="none" />
+    <http pattern="/editkurs/*" security="none" />
+    <http pattern="/deletekurs/*" security="none" />
     
     <http auto-config="true" use-expressions="true">
         <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
@@ -21,6 +27,13 @@
         <intercept-url pattern="/profesor" access="hasRole('ROLE_ADMIN')" />
         <intercept-url pattern="/editasistent/*" access="hasRole('ROLE_ADMIN')" />
         <intercept-url pattern="/editprofesor/*" access="hasRole('ROLE_ADMIN')" />
+        
+        <intercept-url pattern="/addkorisnik" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/addkurs" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/korisnik" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/kurs" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/editkorisnik/*" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/editkurs/*" access="hasRole('ROLE_ADMIN')" />
         <access-denied-handler error-page="/403" />
         <form-login
             login-page="/login"

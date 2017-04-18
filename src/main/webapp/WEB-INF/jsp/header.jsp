@@ -55,6 +55,22 @@
                                     <li><a href="/MetCourses/addasistent">Унос асистената</a></li>
                                 </ul>
                             </li>
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                                    Корисници <b class="caret"></b></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="/MetCourses/korisnik">Табела корисника</a></li>
+                                    <li><a href="/MetCourses/addkorisnik">Унос корисника</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                                    Курсеви <b class="caret"></b></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="/MetCourses/kurs">Табела курсева</a></li>
+                                    <li><a href="/MetCourses/addkurs">Унос курсева</a></li>
+                                </ul>
+                            </li>
                             <li><a href="/MetCourses/premiumFlow"><span style="font-weight: bold">Премијум</span></a></li>
                             <li><a href="/MetCourses/login"><span class="glyphicon glyphicon-log-in"></span>Пријавите се</a></li>
 

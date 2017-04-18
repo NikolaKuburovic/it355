@@ -1,17 +1,31 @@
 package com.it355.model;
 
 import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author Nikola Kuburovic 1095
  */
 @SuppressWarnings("serial")
+@Entity
+@Table(name="ASISTENT")
 public class Asistent implements Serializable{
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "asistent_id")
     private int id;
+    @Column(name = "asistent_ime")
     private String ime;
+    @Column(name = "asistent_prezime")
     private String prezime;
+    @Column(name = "asistent_oblast")
     private String oblast;
     
     public Asistent(){
