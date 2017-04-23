@@ -37,12 +37,12 @@ public class ProfesorDaoImpl implements ProfesorDao {
     }
 
     @Override
-    public boolean addProfesor(Profesor profesor) {
+    public Profesor addProfesor(Profesor profesor) {
         String sql = "INSERT INTO PROFESOR " + "(profesor_ime, profesor_prezime,"
                 + "profesor_oblast) VALUES (?, ?, ?)";
         jdbcTemplate.update(sql, new Object[]{profesor.getIme(), profesor.getPrezime(),
             profesor.getOblast()});
-        return true;
+        return profesor;
     }
 
     @Override
@@ -52,12 +52,12 @@ public class ProfesorDaoImpl implements ProfesorDao {
     }
 
     @Override
-    public boolean updateProfesor(Profesor profesor) {
+    public Profesor updateProfesor(Profesor profesor) {
         String sql = "UPDATE PROFESOR SET profesor_ime=?, profesor_prezime=?,"
                 + "profesor_oblast=? WHERE profesor_id=?";
         jdbcTemplate.update(sql, profesor.getIme(), profesor.getPrezime(), profesor.getOblast(),
                 profesor.getId());
-        return true;
+        return profesor;
     }
 
     @Override

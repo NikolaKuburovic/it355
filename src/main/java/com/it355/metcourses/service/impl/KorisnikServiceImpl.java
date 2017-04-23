@@ -21,7 +21,7 @@ public class KorisnikServiceImpl implements KorisnikService {
     }
 
     @Override
-    public boolean addKorisnik(Korisnik korisnik) {
+    public Korisnik addKorisnik(Korisnik korisnik) {
         return korisnikDao.addKorisnik(korisnik);
     }
 
@@ -31,7 +31,7 @@ public class KorisnikServiceImpl implements KorisnikService {
     }
 
     @Override
-    public boolean updateKorisnik(Korisnik korisnik) {
+    public Korisnik updateKorisnik(Korisnik korisnik) {
         return korisnikDao.updateKorisnik(korisnik);
     }
 

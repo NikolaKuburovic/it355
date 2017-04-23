@@ -45,9 +45,9 @@ public class KorisnikDaoImpl implements KorisnikDao {
 
     @Override
     @Transactional
-    public boolean addKorisnik(Korisnik korisnik) {
+    public Korisnik addKorisnik(Korisnik korisnik) {
         getSession().saveOrUpdate(korisnik);
-        return true;
+        return korisnik;
     }
 
     @Override
@@ -58,9 +58,9 @@ public class KorisnikDaoImpl implements KorisnikDao {
 
     @Override
     @Transactional
-    public boolean updateKorisnik(Korisnik korisnik) {
+    public Korisnik updateKorisnik(Korisnik korisnik) {
         getSession().saveOrUpdate(korisnik);
-        return true;
+        return korisnik;
     }
 
     @Override

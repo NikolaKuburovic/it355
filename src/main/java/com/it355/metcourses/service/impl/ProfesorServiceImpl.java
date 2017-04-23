@@ -26,7 +26,7 @@ public class ProfesorServiceImpl implements ProfesorService {
     }
 
     @Override
-    public boolean addProfesor(Profesor profesor) {
+    public Profesor addProfesor(Profesor profesor) {
         return profesorDao.addProfesor(profesor);
     }
 
@@ -36,7 +36,7 @@ public class ProfesorServiceImpl implements ProfesorService {
     }
 
     @Override
-    public boolean updateProfesor(Profesor profesor) {
+    public Profesor updateProfesor(Profesor profesor) {
         return profesorDao.updateProfesor(profesor);
     }
 

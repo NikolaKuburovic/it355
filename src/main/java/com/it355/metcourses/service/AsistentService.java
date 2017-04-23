@@ -13,11 +13,11 @@ public interface AsistentService {
 
     public List<Asistent> getAllAsistent();
 
-    public boolean addAsistent(Asistent asistent);
+    public Asistent addAsistent(Asistent asistent);
 
     public void deleteAsistent(int id);
 
-    public boolean updateAsistent(Asistent asistent);
+    public Asistent updateAsistent(Asistent asistent);
 
     public Asistent getAsistentById(int id);
 }

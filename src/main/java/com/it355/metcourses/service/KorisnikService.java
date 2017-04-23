@@ -11,11 +11,11 @@ public interface KorisnikService {
 
     public List<Korisnik> getAllKorisnik();
 
-    public boolean addKorisnik(Korisnik korisnik);
+    public Korisnik addKorisnik(Korisnik korisnik);
 
     public void deleteKorisnik(Korisnik korisnik);
 
-    public boolean updateKorisnik(Korisnik korisnik);
+    public Korisnik updateKorisnik(Korisnik korisnik);
 
     public Korisnik getKorisnikById(int id);
 

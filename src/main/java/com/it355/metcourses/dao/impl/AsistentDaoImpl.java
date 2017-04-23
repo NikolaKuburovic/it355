@@ -37,12 +37,12 @@ public class AsistentDaoImpl implements AsistentDao {
     }
 
     @Override
-    public boolean addAsistent(Asistent asistent) {
+    public Asistent addAsistent(Asistent asistent) {
         String sql = "INSERT INTO ASISTENT " + "(asistent_ime, asistent_prezime,"
                 + "asistent_oblast) VALUES (?, ?, ?)";
         jdbcTemplate.update(sql, new Object[]{asistent.getIme(), asistent.getPrezime(),
             asistent.getOblast()});
-        return true;
+        return asistent;
     }
 
     @Override
@@ -52,12 +52,12 @@ public class AsistentDaoImpl implements AsistentDao {
     }
 
     @Override
-    public boolean updateAsistent(Asistent asistent) {
+    public Asistent updateAsistent(Asistent asistent) {
         String sql = "UPDATE ASISTENT SET asistent_ime=?, asistent_prezime=?,"
                 + "asistent_oblast=? WHERE asistent_id=?";
         jdbcTemplate.update(sql, asistent.getIme(), asistent.getPrezime(), asistent.getOblast(),
                 asistent.getId());
-        return true;
+        return asistent;
     }
 
     @Override

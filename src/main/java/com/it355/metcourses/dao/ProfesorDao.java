@@ -13,11 +13,11 @@ public interface ProfesorDao {
 
     public List<Profesor> getAllProfesor();
 
-    public boolean addProfesor(Profesor profesor);
+    public Profesor addProfesor(Profesor profesor);
 
     public void deleteProfesor(int id);
 
-    public boolean updateProfesor(Profesor profesor);
+    public Profesor updateProfesor(Profesor profesor);
 
     public Profesor getProfesorById(int id);
 

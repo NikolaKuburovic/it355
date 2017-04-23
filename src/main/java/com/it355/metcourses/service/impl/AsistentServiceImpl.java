@@ -26,7 +26,7 @@ public class AsistentServiceImpl implements AsistentService {
     }
 
     @Override
-    public boolean addAsistent(Asistent asistent) {
+    public Asistent addAsistent(Asistent asistent) {
         return asistentDao.addAsistent(asistent);
     }
 
@@ -36,7 +36,7 @@ public class AsistentServiceImpl implements AsistentService {
     }
 
     @Override
-    public boolean updateAsistent(Asistent asistent) {
+    public Asistent updateAsistent(Asistent asistent) {
         return asistentDao.updateAsistent(asistent);
     }
 
