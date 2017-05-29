@@ -55,7 +55,10 @@ public class AsistentController {
     @RequestMapping(value = "/addasistent", method = RequestMethod.POST)
     public ModelAndView addAsistent(@ModelAttribute("asistent") Asistent a) {
         asistentService.addAsistent(a);
-        return new ModelAndView("redirect:/asistent");
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("success", "Асистент " + a.getIme() + " " + a.getPrezime() + " је регистрован.");
+        modelAndView.setViewName("asistentsuccess");
+        return modelAndView;
     }
 
     @RequestMapping(value = "/editasistent/{id}", method = RequestMethod.GET)

@@ -22,7 +22,16 @@
         <property name="username" value="root" />
         <property name="password" value="root" />
     </bean>
-    
+    <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="tcp://localhost:61616"/>
+    </bean>
+
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="defaultDestinationName" value="order-queue"/>
+    </bean>
+    <bean name="messageSender" class="com.it355.metcourses.messaging.MessageSender" />
+    <bean name="asistentRepository" class="com.it355.metcourses.service.impl.AsistentRepositoryImpl" />
     <!-- Services -->
     <bean name="profesorService" class="com.it355.metcourses.service.impl.ProfesorServiceImpl" />
     

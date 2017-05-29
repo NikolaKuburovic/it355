@@ -2,6 +2,7 @@ package com.it355.metcourses.service;
 
 import com.it355.model.Asistent;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -20,4 +21,6 @@ public interface AsistentService {
     public Asistent updateAsistent(Asistent asistent);
 
     public Asistent getAsistentById(int id);
+    
+    public Map<String, Asistent> getAllAsistentMap();
 }
